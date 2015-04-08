@@ -92,6 +92,8 @@ img.src = html.escape(
 // it won't cause problems even in IE < 9
 ```
 
-**However**, if you use `innerHTML` and you target IE < 9 then [this **could** be a problem](https://github.com/nette/nette/issues/1496).
+**However**, if you use `innerHTML` and you target IE < 9 then [this **might** be a problem](https://github.com/nette/nette/issues/1496).
 
 Accordingly, if you need more chars and/or backticks to be escaped and unescaped, feel free to use alternatives like [lodash](https://github.com/lodash/lodash) or [he](https://www.npmjs.com/package/he)
+
+Here a bit more of [my POV](https://github.com/WebReflection/html-escaper/commit/52d554fc6e8583b6ffdd357967cf71962fc07cf6#commitcomment-10625122) and why I haven't implemented same thing alternatives did. Good news: those are alternatives ;-)
