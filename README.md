@@ -1,6 +1,8 @@
 # html-escaper
 A simple module to escape/unescape common problematic entities.
 
+![build status](https://travis-ci.org/WebReflection/html-escaper.svg?branch=master)
+
 
 ### How
 This package is available in npm so `npm install html-escaper` is all you need to do, using eventually the global flag too.
