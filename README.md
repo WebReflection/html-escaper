@@ -92,6 +92,6 @@ img.src = html.escape(
 // it won't cause problems even in IE < 9
 ```
 
-If you use `innerHTML` and you target IE < 9 then [this could be a problem](https://github.com/nette/nette/issues/1496).
+**However**, if you use `innerHTML` and you target IE < 9 then [this **could** be a problem](https://github.com/nette/nette/issues/1496).
 
 Accordingly, if you need more chars and/or backticks to be escaped and unescaped, feel free to use alternatives like [lodash](https://github.com/lodash/lodash) or [he](https://www.npmjs.com/package/he)
