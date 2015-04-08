@@ -82,6 +82,14 @@ Internt explorer < 9 has [some backtick issue](https://html5sec.org/#102)
 
 For compatibility sake with common server-side HTML entities encoders and decoders, and in order to have the most reliable I/O, this little utility will NOT fix this IE < 9 problem.
 
-It is also important to note that if we create valid HTML and we set attributes at runtime in the right way, and using this utility, backticks in strings cannot possibly affect attribute behaviors so it is safe to use this utility as such.
+It is also important to note that if we create valid HTML and we set attributes at runtime through this utility, backticks in strings cannot possibly affect attribute behaviors.
 
-If you need more chars and/or backticks to be escaped and unescaped, feel free to use alternatives like [lodash](https://github.com/lodash/lodash) or [he](https://www.npmjs.com/package/he)
+```js
+var img = new Image();
+img.src = html.escape(
+  'x` `<script>alert(1)</script>"` `'
+);
+// it won't cause problems even in IE < 9
+```
+
+However, if you need more chars and/or backticks to be escaped and unescaped, feel free to use alternatives like [lodash](https://github.com/lodash/lodash) or [he](https://www.npmjs.com/package/he)
