@@ -4,7 +4,11 @@
   "description": "fast and safe way to escape and unescape &<>'\" chars",
   "main": "html.js",
   "scripts": {
-    "test": "node ./test.js"
+    "build": "npm run minify && npm test && npm run size",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "minify": "uglifyjs html.js --comments=/^!/ --compress --mangle -o min.js",
+    "size": "cat html.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+    "test": "istanbul cover ./test.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,10 @@
   "bugs": {
     "url": "https://github.com/WebReflection/html-escaper/issues"
   },
-  "homepage": "https://github.com/WebReflection/html-escaper"
+  "homepage": "https://github.com/WebReflection/html-escaper",
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "uglify-js": "^3.0.15"
+  }
 }

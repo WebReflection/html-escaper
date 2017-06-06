@@ -1,7 +1,5 @@
-# html-escaper
+# html-escaper [![Build Status](https://travis-ci.org/WebReflection/html-escaper.svg?branch=master)](https://travis-ci.org/WebReflection/html-escaper) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/html-escaper/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/html-escaper?branch=master)
 A simple module to escape/unescape common problematic entities.
-
-![build status](https://travis-ci.org/WebReflection/html-escaper.svg?branch=master)
 
 
 ### How

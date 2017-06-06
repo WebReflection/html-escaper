@@ -1,6 +1,6 @@
 /*jslint indent: 2 */
+/*! (c) Andrea Giammarchi - MIT */
 var html = (function (O) {'use strict';
-  // Andrea Giammarchi - MIT Style License
   var
     reEscape = /[&<>'"]/g,
     reUnescape = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g,
@@ -38,6 +38,6 @@ var html = (function (O) {'use strict';
       return replace.call(s, reUnescape, fnUnescape);
     }
   });
-  }(Object));
+}(Object));
 
-try { module.exports = html; } catch (ignore) {}
+try { module.exports = html; } catch (o_O) {}

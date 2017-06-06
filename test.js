@@ -1,3 +1,5 @@
+delete Object.freeze;
+
 var html = require('./html.js');
 
 console.assert(
