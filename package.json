@@ -1,6 +1,6 @@
 {
   "name": "html-escaper",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "fast and safe way to escape and unescape &<>'\" chars",
   "main": "cjs/index.js",
   "module": "esm/index.js",
