@@ -1,6 +1,6 @@
 delete Object.freeze;
 
-var html = require('./html.js');
+var html = require('./');
 
 console.assert(
   html.escape('&<>\'"') === '&amp;&lt;&gt;&#39;&quot;',

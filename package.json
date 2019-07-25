@@ -2,12 +2,16 @@
   "name": "html-escaper",
   "version": "1.0.1",
   "description": "fast and safe way to escape and unescape &<>'\" chars",
-  "main": "html.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "unpkg": "min.js",
   "scripts": {
-    "build": "npm run minify && npm test && npm run size",
+    "build": "npm run cjs && npm run rollup && npm run minify && npm test && npm run size",
+    "cjs": "ascjs esm cjs",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "minify": "uglifyjs html.js --comments=/^!/ --compress --mangle -o min.js",
-    "size": "cat html.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+    "minify": "uglifyjs index.js --comments=/^!/ --compress --mangle -o min.js",
+    "rollup": "rollup --config rollup.config.js",
+    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
     "test": "istanbul cover ./test.js"
   },
   "repository": {
@@ -29,8 +33,10 @@
   },
   "homepage": "https://github.com/WebReflection/html-escaper",
   "devDependencies": {
-    "coveralls": "^2.13.1",
+    "ascjs": "^3.0.1",
+    "coveralls": "^3.0.5",
     "istanbul": "^0.4.5",
-    "uglify-js": "^3.0.15"
+    "rollup": "^1.17.0",
+    "uglify-js": "^3.6.0"
   }
 }
