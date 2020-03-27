@@ -2,16 +2,22 @@
 A simple module to escape/unescape common problematic entities.
 
 
+## V3 ESM Only Release
+
+The version 3 of this module ditches entirely legacy browsers and _nodejs_ with broken loaders, such as `v13.0.0` and `v13.1.0`.
+
+As the code is basically identical, simply stick with version 2 if you have any issue with this one 👋
+
+
 ### How
 This package is available in npm so `npm install html-escaper` is all you need to do, using eventually the global flag too.
 
 Once the module is present
 ```js
-var html = require('html-escaper');
+import {escape, unescape} from 'html-escaper';
 
-// two basic methods
-html.escape('string');
-html.unescape('escaped string');
+escape('string');
+unescape('escaped string');
 ```
 
 
