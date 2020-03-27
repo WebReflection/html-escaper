@@ -23,19 +23,26 @@ var html = (function (exports) {
    * THE SOFTWARE.
    */
 
-  var replace = ''.replace;
+  const {replace} = '';
 
-  var ca = /[&<>'"]/g;
-  var es = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g;
+  // escape
+  const es = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g;
+  const ca = /[&<>'"]/g;
 
-  var esca = {
+  const esca = {
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
     "'": '&#39;',
     '"': '&quot;'
   };
-  var unes = {
+  const pe = m => esca[m];
+
+  const escape = es => replace.call(es, ca, pe);
+
+
+  // unescape
+  const unes = {
     '&amp;': '&',
     '&#38;': '&',
     '&lt;': '<',
@@ -47,20 +54,9 @@ var html = (function (exports) {
     '&quot;': '"',
     '&#34;': '"'
   };
+  const cape = m => unes[m];
 
-  function escape(es) {
-    return replace.call(es, ca, pe);
-  }
-  function unescape(un) {
-    return replace.call(un, es, cape);
-  }
-  function pe(m) {
-    return esca[m];
-  }
-
-  function cape(m) {
-    return unes[m];
-  }
+  const unescape = un => replace.call(un, es, cape);
 
   exports.escape = escape;
   exports.unescape = unescape;
