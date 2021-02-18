@@ -35,6 +35,12 @@ const esca = {
 };
 const pe = m => esca[m];
 
+/**
+ * Safely escape HTML entities such as `&`, `<`, `>`, `"`, and `'`.
+ * @param {string|number|boolean} es the input to safely escape
+ * @returns {string} the escaped input, and it throws an error if
+ *  the input type is unexpected
+ */
 export const escape = es => replace.call(es, ca, pe);
 
 
@@ -53,4 +59,11 @@ const unes = {
 };
 const cape = m => unes[m];
 
+/**
+ * Safely unescape previously escaped entities such as `&`, `<`, `>`, `"`,
+ * and `'`.
+ * @param {string} un a previously escaped string
+ * @returns {string} the unescaped input, and it throws an error if
+ *  the input type is unexpected
+ */
 export const unescape = un => replace.call(un, es, cape);
