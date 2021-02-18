@@ -1,8 +1,12 @@
 # html-escaper
 
-![Downloads](https://img.shields.io/npm/dm/html-escaper.svg) [![Build Status](https://travis-ci.org/WebReflection/html-escaper.svg?branch=master)](https://travis-ci.org/WebReflection/html-escaper) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/html-escaper/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/html-escaper?branch=master) ![WebReflection status](https://offline.report/status/webreflection.svg)
+[![Downloads](https://img.shields.io/npm/dm/html-escaper.svg)](https://www.npmjs.com/package/html-escaper) [![Build Status](https://travis-ci.org/WebReflection/html-escaper.svg?branch=master)](https://travis-ci.org/WebReflection/html-escaper) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/html-escaper/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/html-escaper?branch=master) ![WebReflection status](https://offline.report/status/webreflection.svg)
 
 A simple module to escape/unescape common problematic entities.
+
+#### Go sloppy if you like!
+
+If you'd like to deal with any kind of input, including `null` or `undefined`, and even `symbol` kind, check [html-sloppy-escaper](https://www.npmjs.com/package/html-sloppy-escaper) out: it's this very same module, except it never throws errors 👍
 
 
 ## V3 ESM Only Release
