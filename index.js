@@ -40,9 +40,10 @@ var html = (function (exports) {
 
   /**
    * Safely escape HTML entities such as `&`, `<`, `>`, `"`, and `'`.
-   * @param {string|number|boolean} es the input to safely escape
-   * @returns {string} the escaped input, and it throws an error if
-   *  the input type is unexpected
+   * @param {string} es the input to safely escape
+   * @returns {string} the escaped input, and it **throws** an error if
+   *  the input type is unexpected, except for boolean and numbers,
+   *  converted as string.
    */
   const escape = es => replace.call(es, ca, pe);
 
@@ -66,8 +67,9 @@ var html = (function (exports) {
    * Safely unescape previously escaped entities such as `&`, `<`, `>`, `"`,
    * and `'`.
    * @param {string} un a previously escaped string
-   * @returns {string} the unescaped input, and it throws an error if
-   *  the input type is unexpected
+   * @returns {string} the unescaped input, and it **throws** an error if
+   *  the input type is unexpected, except for boolean and numbers,
+   *  converted as string.
    */
   const unescape = un => replace.call(un, es, cape);
 
